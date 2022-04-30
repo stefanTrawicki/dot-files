@@ -1,0 +1,28 @@
+autoload -U colors && colors
+
+# found https://stackoverflow.com/questions/689765/how-can-i-change-the-color-of-my-prompt-in-zsh-different-from-normal-text
+
+PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[green]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
+
+alias gs="git status"
+alias v="vim"
+alias f="find / -iname"
+alias l="ls | grep"
+alias g="git ls-files"
+
+switchdesktop() {
+        typeset -A desktophash
+        desktophash[0]=29
+        desktophash[1]=18
+        desktophash[2]=19
+        desktophash[3]=20
+        desktophash[4]=21
+        desktophash[5]=23
+        desktophash[6]=22
+        desktophash[7]=26
+        desktophash[8]=28
+        desktophash[9]=25
+        desktopkey=${desktophash[$1]}
+        osascript -e "tell application \"System Events\" to key code $desktopkey using control down"
+}
+alias switchdesktop=switchdesktop
