@@ -1,2 +1,0 @@
-cmd - return : open -a Terminal -n
-cmd + shift - return : open -a Safari -n -F
